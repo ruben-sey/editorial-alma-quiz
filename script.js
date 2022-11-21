@@ -13,8 +13,10 @@ $("#quiz-form").submit(function () {
 });
 
 function getCharacter() {
+  respectMotionPreference(document.querySelector("#results"));
+  // Fade out and remove the submit button
   fadeOut(document.querySelector("#submitButton"));
-  fadeIn(document.querySelector("#results"));
+  // Fade in the loading animation
   fadeIn(document.querySelector(".loading-wrapper"));
   //handler function that throws any encountered error
   const handleError = (response) => {
@@ -67,9 +69,6 @@ function getCharacter() {
     .finally(() => {
       fadeOut(document.querySelector(".loading-wrapper"));
       fadeIn(document.querySelector(".results-wrapper"));
-      respectMotionPreference(document.querySelector("#results"));
-      document.querySelector(".results-wrapper").setAttribute("tabindex", "-1");
-      document.querySelector(".results-wrapper").focus();
     });
 }
 
