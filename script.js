@@ -14,9 +14,9 @@ $("#quiz-form").submit(function () {
 
 function getCharacter() {
   // Fade out and remove the submit button
-  fadeOut(submitButton);
+  fadeOut(document.querySelector("#submitButton"));
   // Fade in the loading animation
-  fadeIn(loadingWrapper);
+  fadeIn(document.querySelector(".loading-wrapper"));
   //handler function that throws any encountered error
   const handleError = (response) => {
     // If the response is not ok
@@ -66,16 +66,8 @@ function getCharacter() {
       console.log(err);
     })
     .finally(() => {
-      // Fade the loading animation out
-      fadeOut(loadingWrapper);
-      // Fade in the results
-      fadeIn(resultWrapper);
-      // Focus on the results wrapper --
-      // we do this to make sure results are
-      // easily accessible for folks using a
-      // screenreader
-      resultWrapper.setAttribute("tabindex", "-1");
-      resultWrapper.focus();
+      fadeOut(document.querySelector(".loading-wrapper"));
+      fadeIn(document.querySelector(".results-wrapper"));
     });
 }
 
