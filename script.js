@@ -68,6 +68,7 @@ function getCharacter() {
       answerFour: answerFour,
       answerFive: answerFive,
       answerSix: answerSix,
+      email: email
     }),
   })
     // Skips to .catch if error is thrown
