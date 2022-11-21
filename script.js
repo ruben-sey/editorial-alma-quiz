@@ -46,8 +46,8 @@ function getCharacter() {
     },
     // Set our body which is the data we're sending to Airtable
     body: JSON.stringify({
-      Answer1: answerOne,
-      Answer2: answerTwo,
+      answerOne: answerOne,
+      answerTwo: answerTwo,
     }),
   })
     // Skips to .catch if error is thrown
