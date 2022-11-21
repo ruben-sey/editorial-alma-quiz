@@ -13,6 +13,7 @@ $("#quiz-form").submit(function () {
 });
 
 function getCharacter() {
+  respectMotionPreference(document.querySelector("#results"));
   // Fade out and remove the submit button
   fadeOut(document.querySelector("#submitButton"));
   // Fade in the loading animation
@@ -68,21 +69,25 @@ function getCharacter() {
     .finally(() => {
       fadeOut(document.querySelector(".loading-wrapper"));
       fadeIn(document.querySelector(".results-wrapper"));
+      respectMotionPreference(document.querySelector("#results"));
+      document.querySelector(".results-wrapper").setAttribute("tabindex", "-1");
+      document.querySelector(".results-wrapper").focus();
     });
 }
 
-// Function to fade an element in
-function fadeIn(e) {
-  e.parentElement.style.display = "block";
+function fadeOut(e) {
+  e.style.transition = "opacity 0.5s";
+  e.style.opacity = 0;
   setTimeout(() => {
-    e.classList.remove("fade");
-  }, 300);
+    e.style.display = "none";
+  }, 700);
 }
 
-// Function to fade an element out and remove it
-function fadeOut(e) {
-  e.classList.add("fade");
+function fadeIn(e) {
+  e.style.opacity = 0;
+  e.style.display = "block";
+  e.style.transition = "opacity 0.5s";
   setTimeout(() => {
-    e.remove();
-  }, 300);
+    e.style.opacity = 1;
+  }, 500);
 }
