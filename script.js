@@ -4,8 +4,6 @@ const questionThreeItems = document.querySelectorAll("#group-three > li");
 const questionFourItems = document.querySelectorAll("#group-four > li");
 const questionFiveItems = document.querySelectorAll("#group-five > li");
 const questionSixItems = document.querySelectorAll("#group-six > li");
-const questionSevenItems = document.querySelectorAll("#group-seven > li");
-const questionEightItems = document.querySelectorAll("#group-eight > li");
 const resultName = document.querySelector("#result-name");
 const resultImage = document.querySelector("#result-image");
 const resultDescription = document.querySelector("#result-description");
@@ -54,12 +52,6 @@ function getCharacter() {
   const answerSix = Number(
     document.querySelector('input[name="six"]:checked').value
   );
-  const answerSeven = Number(
-    document.querySelector('input[name="seven"]:checked').value
-  );
-  const answerEight = Number(
-    document.querySelector('input[name="eight"]:checked').value
-  );
   // Start our fetch (API call) the URL is our endpoint
   fetch("https://baldium.autocode.dev/editorial-alma-quiz@dev/", {
     // Define our method and headers
@@ -76,8 +68,6 @@ function getCharacter() {
       answerFour: answerFour,
       answerFive: answerFive,
       answerSix: answerSix,
-      answerSeven: answerSeven,
-      answerEight: answerEight,
     }),
   })
     // Skips to .catch if error is thrown
