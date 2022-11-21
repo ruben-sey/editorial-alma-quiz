@@ -1,5 +1,11 @@
 const questionOneItems = document.querySelectorAll("#group-one > li");
 const questionTwoItems = document.querySelectorAll("#group-two > li");
+const questionThreeItems = document.querySelectorAll("#group-three > li");
+const questionFourItems = document.querySelectorAll("#group-four > li");
+const questionFiveItems = document.querySelectorAll("#group-five > li");
+const questionSixItems = document.querySelectorAll("#group-six > li");
+const questionSevenItems = document.querySelectorAll("#group-seven > li");
+const questionEightItems = document.querySelectorAll("#group-eight > li");
 const resultName = document.querySelector("#result-name");
 const resultImage = document.querySelector("#result-image");
 const resultDescription = document.querySelector("#result-description");
@@ -29,13 +35,30 @@ function getCharacter() {
     }
   };
 
-  // Get the value from question one and make it a number
+  // Get the value from questions and make it a number
   const answerOne = Number(
     document.querySelector('input[name="one"]:checked').value
   );
-  // Get the value from question two and make it a number
   const answerTwo = Number(
     document.querySelector('input[name="two"]:checked').value
+  );
+  const answerThree = Number(
+    document.querySelector('input[name="three"]:checked').value
+  );
+  const answerFour = Number(
+    document.querySelector('input[name="four"]:checked').value
+  );
+  const answerFive = Number(
+    document.querySelector('input[name="five"]:checked').value
+  );
+  const answerSix = Number(
+    document.querySelector('input[name="six"]:checked').value
+  );
+  const answerSeven = Number(
+    document.querySelector('input[name="seven"]:checked').value
+  );
+  const answerEight = Number(
+    document.querySelector('input[name="eight"]:checked').value
   );
   // Start our fetch (API call) the URL is our endpoint
   fetch("https://baldium.autocode.dev/editorial-alma-quiz@dev/", {
@@ -49,6 +72,12 @@ function getCharacter() {
     body: JSON.stringify({
       answerOne: answerOne,
       answerTwo: answerTwo,
+      answerThree: answerThree,
+      answerFour: answerFour,
+      answerFive: answerFive,
+      answerSix: answerSix,
+      answerSeven: answerSeven,
+      answerEight: answerEight,
     }),
   })
     // Skips to .catch if error is thrown
