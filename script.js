@@ -7,7 +7,8 @@ let myResult;
 
 // Prevent the form from submitting
 // so we can make our API call
-$('#quiz-form').submit(function () {
+$("#quiz-form").submit(function () {
+  getCharacter();
   return false;
 });
 
