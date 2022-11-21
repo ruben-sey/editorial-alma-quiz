@@ -55,22 +55,11 @@ function getCharacter() {
     .then(handleError)
     // If there is no error, let's work with the data
     .then((data) => {
-      // Here we set a variable with data returned from our API call
-      myResult = data.result_send;
-      // Here we set attributes for an image
-      // First we set the src for the image
-      resultImage.setAttribute("src", data.result_image);
-      // Then we set the alt text
-      resultImage.setAttribute(
-        "alt",
-        `${data.result_send} - Editorial Alma Quiz`
-      );
-      // Put the result from Airtable in our span
-      // that's holding results in Webflow
-      resultName.innerText = data.result_send;
-      // Put the result description from Airtable
-      // in our paragraph that's holding results in Webflow
-      resultDescription.innerText = data.result_description;
+      console.log(data);
+      document.querySelector("#resultName").innerText = data.fields.resultName;
+      document.querySelector("#resultDescription").innerText =
+        data.fields.resultDescription;
+      document.querySelector("#resultImage").src = data.fields.resultImage;
     })
     .catch(function writeError(err) {
       // Catches the error and logs it
