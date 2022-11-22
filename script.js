@@ -1,14 +1,3 @@
-const questionOneItems = document.querySelectorAll("#group-one > li");
-const questionTwoItems = document.querySelectorAll("#group-two > li");
-const questionThreeItems = document.querySelectorAll("#group-three > li");
-const questionFourItems = document.querySelectorAll("#group-four > li");
-const questionFiveItems = document.querySelectorAll("#group-five > li");
-const questionSixItems = document.querySelectorAll("#group-six > li");
-const resultName = document.querySelector("#result-name");
-const resultImage = document.querySelector("#result-image");
-const resultDescription = document.querySelector("#result-description");
-let myResult;
-
 // Prevent the form from submitting
 // so we can make our API call
 $("#quiz-form").submit(function () {
@@ -68,7 +57,6 @@ function getCharacter() {
       answerFour: answerFour,
       answerFive: answerFive,
       answerSix: answerSix,
-      email: email
     }),
   })
     // Skips to .catch if error is thrown
