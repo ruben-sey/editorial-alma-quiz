@@ -6,9 +6,7 @@ $("#quiz-form").submit(function () {
 });
 
 function getCharacter() {
-  // Fade out and remove the submit button
   fadeOut(document.querySelector("#submitButton"));
-  // Fade in the loading animation
   fadeIn(document.querySelector(".loading-wrapper"));
   //handler function that throws any encountered error
   const handleError = (response) => {
@@ -23,6 +21,7 @@ function getCharacter() {
   };
 
   // Get the value from questions and make it a number
+  const answerEmail = document.querySelector('input[type=email]');
   const answerOne = Number(
     document.querySelector('input[name="one"]:checked').value
   );
@@ -57,6 +56,7 @@ function getCharacter() {
       answerFour: answerFour,
       answerFive: answerFive,
       answerSix: answerSix,
+      answerEmail: answerEmail,
     }),
   })
     // Skips to .catch if error is thrown
