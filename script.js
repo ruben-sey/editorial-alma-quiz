@@ -66,7 +66,7 @@ function getCharacter() {
       document.querySelector("#resultDescription").innerText =
         data.fields.resultDescription;
       document.querySelector("#resultImage").src = data.fields.resultImage;
-      document.querySelector("#quizLink").src = data.fields.resultImage;
+      document.querySelector("#quizLink").href = data.fields.resultImage;
     })
     .catch(function writeError(err) {
       // Catches the error and logs it
