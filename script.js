@@ -62,10 +62,6 @@ function getCharacter() {
     // If there is no error, let's work with the data
     .then((data) => {
       console.log(data);
-      document.querySelector("#resultName").innerText = data.fields.resultName;
-      document.querySelector("#resultDescription").innerText =
-        data.fields.resultDescription;
-      document.querySelector("#resultImage").src = data.fields.resultImage;
       document.querySelector("#quizLink").href = data.fields.resultImage;
     })
     .catch(function writeError(err) {
@@ -74,6 +70,7 @@ function getCharacter() {
     })
     .finally(() => {
       fadeOut(document.querySelector(".loading-wrapper"));
+      fadeOut(document.querySelector("#questionWrapperResults"));
       fadeIn(document.querySelector(".results-wrapper"));
     });
 }
