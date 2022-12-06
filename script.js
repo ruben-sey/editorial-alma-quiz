@@ -7,6 +7,7 @@ $("#quiz-form").submit(function () {
 
 function getCharacter() {
   fadeOut(document.querySelector("#submitButton"));
+  fadeOut(document.querySelector("#questionWrapperResults"));
   fadeIn(document.querySelector(".loading-wrapper"));
   //handler function that throws any encountered error
   const handleError = (response) => {
@@ -70,7 +71,6 @@ function getCharacter() {
     })
     .finally(() => {
       fadeOut(document.querySelector(".loading-wrapper"));
-      fadeOut(document.querySelector("#questionWrapperResults"));
       fadeIn(document.querySelector(".results-wrapper"));
     });
 }
