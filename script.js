@@ -62,7 +62,7 @@ function getCharacter() {
     // If there is no error, let's work with the data
     .then((data) => {
       console.log(data);
-      document.querySelector("#quizLink").href = data.fields.resultImage;
+      document.querySelector("#quizLink").href = data.fields.quizLink;
     })
     .catch(function writeError(err) {
       // Catches the error and logs it
