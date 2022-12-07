@@ -76,7 +76,7 @@ function getCharacter() {
 }
 
 function fadeOut(e) {
-  e.style.transition = "opacity 0.5s";
+  e.style.transition = "opacity 0.1s";
   e.style.opacity = 0;
   setTimeout(() => {
     e.style.display = "none";
@@ -86,7 +86,7 @@ function fadeOut(e) {
 function fadeIn(e) {
   e.style.opacity = 0;
   e.style.display = "block";
-  e.style.transition = "opacity 0.5s";
+  e.style.transition = "opacity 0.1s";
   setTimeout(() => {
     e.style.opacity = 1;
   }, 500);
