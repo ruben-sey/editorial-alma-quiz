@@ -22,6 +22,12 @@ function getCharacter() {
   };
 
   // Get the value from questions and make it a number
+  const answerEmail = Text(
+    document.querySelector('input[name="answerEmail"]').value
+  );
+  const age = Number(
+    document.querySelector('input[name="age"]').value
+  );
   const answerOne = Number(
     document.querySelector('input[name="one"]:checked').value
   );
@@ -56,6 +62,8 @@ function getCharacter() {
       answerFour: answerFour,
       answerFive: answerFive,
       answerSix: answerSix,
+      answerEmail: answerEmail,
+      age: age,
     }),
   })
     // Skips to .catch if error is thrown
