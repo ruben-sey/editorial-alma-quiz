@@ -22,7 +22,7 @@ function getCharacter() {
   };
 
   // Get the value from questions and make it a number
-  var age = document.getElementById("age").value;
+  record.getElementById("age").value;
   const answerOne = Number(
     document.querySelector('input[name="one"]:checked').value
   );
