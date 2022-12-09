@@ -23,7 +23,7 @@ function getCharacter() {
 
   // Get the value from questions and make it a number
   const age = Number(
-    document.querySelector("#age").value
+    document.getElementById("#age").value
   );
   const answerOne = Number(
     document.querySelector('input[name="one"]:checked').value
