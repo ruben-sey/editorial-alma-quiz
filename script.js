@@ -25,6 +25,9 @@ function getCharacter() {
   const answerEmail = (
     document.querySelector('input[name="answerEmail"]').value
   );
+  const terms = (
+    document.querySelector('input[name="terms"]').checked
+  );
   const age = Number(
     document.querySelector('input[name="age"]').value
   )
@@ -66,6 +69,7 @@ function getCharacter() {
       answerFive: answerFive,
       answerSix: answerSix,
       answerEmail: answerEmail,
+      terms: terms,
       age: age,
       country: country,
     }),
